@@ -1,0 +1,263 @@
+*{
+    font-family:'Montserrat';
+    font-weight:600;
+}
+
+
+
+#title{
+    background-color:#ff4c68 ;
+    color: whitesmoke;
+}
+
+.container-fluid{
+    padding: 3% 15% 3% 15%;
+}
+
+
+h1{
+    font-family: 'Montserrat';
+    font-size: 3.5rem;
+    font-weight:900;
+   
+    line-height: 1.5;
+}
+
+
+
+        /* Nav bar Section */
+
+
+.navbar {                             
+    padding:0 0 4.5rem;           /*  for space between navbar and heading */    
+}
+
+.navbar-brand{
+    font-family: Ubuntu;
+    font-size:2.5rem;
+    font-weight: bold;
+
+}
+.nav-item{
+    padding:0 18px; /* space between  nav item */
+} 
+
+.nav-link{
+    font-size:1.2rem;
+    font-family: 'Montserrat-thin';
+
+}
+
+
+/* Downlod Button */
+
+.donload-button{
+    margin:5% 3% 5% 0%
+}
+
+
+/* title-image  for iphone image */
+.title-image {
+   width:60%;
+   transform:rotate(25deg);
+
+}
+
+
+
+/*   Features  */
+#features{
+    padding: 7% 9%;
+   
+      
+}
+
+
+.cntr{
+    text-align:center;
+    padding:3.6%;
+   
+     
+}
+   
+
+
+                  /* Feature icon */
+.icon{
+     color:#ee8b9a;
+     margin:1rem ;
+    
+ }
+ .icon:hover{
+     color:rgb(255, 0, 0)
+ }    
+                  /* Feature text */
+.cntr i+h3{
+    font-weight:bolder;
+    color:rgb(1, 13, 78);
+    font-size:1.5rem;
+}
+.cntr i~p{
+    color:#8f8f8f;
+    font-weight:lighter;
+    font-size:1.2rem;
+    
+}
+
+
+/*   Testimonials */
+#testimonials{
+    
+    text-align: center;
+    background-color: #ec331b;
+    color: whitesmoke;
+}
+.testimonial-image{
+    border-radius:50%;
+    width: 11%;
+    margin:1rem ;
+
+}
+
+.testimonial-text{
+    font-weight: bolder;
+    line-height:1.3;
+    font-size:2.5rem;
+    letter-spacing:2px;
+
+}
+.carousel-inner{
+    padding:7% 15%;
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.indi{
+    bottom: -40px;
+    /* margin-top:10px ; */
+}
+
+
+/*  Press */
+#press{
+    background-color: #ec331b;
+    text-align: center;
+    padding-bottom:1.5rem;
+}
+.press-img{
+    width:15% ;
+    margin:20px 20px 30px;
+}
+
+
+
+
+
+
+
+
+
+ /* vertical line */
+
+ .vl1 {
+     
+    border-left: 20px solid white;
+    height: 500px;
+    position: absolute;
+    left: 5px;
+    margin:-10px 0 0 -3px;
+    padding:0;
+    top: 0; 
+    transform:rotate(25deg)
+  }
+  
+  
+  
+  .vl2 {
+    border-left: 20px solid white;
+    height: 500px;
+    position: absolute;
+    left: 45%;
+    margin-left: -3px;
+    top: 0;
+    transform:rotate(25deg)
+    
+  }
+
+
+
+
+
+   /* corona style */
+
+   
+
+	*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+
+	.nav_style{
+
+					background-color: #a29bfe!important;
+
+				}
+
+	.nav_style a{ color: white; }
+
+	/*//////////////// main header \\\\\\\\\\\\\\*/
+
+	.main_header{
+
+		height: 450px;
+		width: 100%;
+	}
+
+	.rightside h1{
+
+		font-size: 3rem;
+	}
+
+	.corona_rotate img{
+
+		animation: gocorona 2s linear infinite;
+	}
+
+	@keyframes gocorona{
+
+		0% { transform: rotate(0); }
+		100% { transform: rotate(360deg); }
+	}
+
+
+	.leftside img{ animation: heartbeat 5s linear infinite ; }
+
+	@keyframes heartbeat
+	{
+
+		0%{ transform: scale( .75 ); }
+		20%{ transform: scale( 1 ); }
+		40%{ transform: scale( .75 ); }
+		60%{ transform: scale( 1 ); }
+		80%{ transform: scale( .75 ); }
+		100%{ transform: scale( .75 ); }
+	}
+    
+    /*******************corona updates*******************/
+    
+    .corona_update{
+        margin: 0 0 30px 0;
+        
+    }
+    
+    .corona_update h3{ color: #ff7675;}
+    
+    .corona_update h1{ font-size: 2rem; text-align:center; }
+    
+    /*///////////////////About///////////////////////*/
+    
+    .sub_section{ background-color: #fbfafd;}
+    
+	.footer_style{ background-color: #a29bfe!important; }
+	
+
