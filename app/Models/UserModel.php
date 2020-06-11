@@ -8,7 +8,7 @@ class UserModel extends Model{
  
     public $returnType = 'array';
     public $useSoftDeletes=false;
-    public $allowedFields=['uid','name','email','password','phone','zipCode','gender'];
+    public $allowedFields=['uid','name','email','password','phone','zipCode','gender','Address'];
   
     public $useTimestamps=true;
     

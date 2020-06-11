@@ -2,6 +2,9 @@
 
 <?= $this->section('content') ?>
 
+<div style="width:100%;height:39px;background:red;text-align:center;" id="pannel">
+<button class="btn btn-outline-dark" onclick="toggleAdUs()" >Admin</button>
+</div>
 
 
 <div class="cont">
@@ -12,6 +15,12 @@
 <form action=<?php echo site_url('UserController/log') ?>  method="POST">
   <div class="form sign-in">
     <h2>Welcome back,</h2>
+
+    <input type="hidden" name="isAdmin" class="isAdmin"  value="0"/>
+        <input type="hidden" name="isUser" class="isUser" value="1"/>
+
+
+
     <label>
       <span>Email</span>
       <input type="email" name="email"/>
@@ -48,6 +57,13 @@
 
     <div class="form sign-up">
       <h2>#STAY HOME STAY SAFE,</h2>
+
+      
+        
+      <input type="hidden" name="isAdmin" class="isAdmin"  value="0"/>
+        <input type="hidden" name="isUser" class="isUser" value="1"/>
+      
+     
       <label>
         <span>Name</span>
         <input type="text" name="name"/>

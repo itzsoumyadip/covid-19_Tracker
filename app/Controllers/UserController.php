@@ -30,70 +30,70 @@ class UserController extends BaseController
                 'zipcode'=>'required',
             ];
          
-         if( ! $this->validate($rules)){
-             $data=[
-                 'validation'=>$this->validator,
-             ];
-         }else{
-            //push data now
+           if( ! $this->validate($rules)){
+                    $data=[
+                        'validation'=>$this->validator,
+                    ];
+                }else{
+                    //push data now
 
             
-            $time= date("his");
-            $date=date("Ymd");
-            $rand=mt_rand($time,$date);
-            
-            $uid=$time.$rand.$date;
-                
+                    $time= date("his");
+                    $date=date("Ymd");
+                    $rand=mt_rand($time,$date);
+                    
+                    $uid=$time.$rand.$date;
+                        
 
-            $db=new UserModel();  // all  user  data tABALE
-            $dbulog=new  ULogModel(); // user login table
+                    $db=new UserModel();  // all  user  data tABALE
+                    $dbulog=new  ULogModel(); // user login table
 
 
 
-             
-            $dbIData=[
-                'uid'=>$uid,
-				'name'=>$request->getVar('name'),  
-				'email'=>$request->getVar('email'),
-				'password'=>password_hash($request->getVar('password'),PASSWORD_DEFAULT),
-				'phone'=> $request->getVar('phone'),
-				'zipCode'=>$request->getVar('zipcode'),
-				'gender'=>$request->getVar('gender'),
-            ];
-            $dbIULog=[
-                'uid'=>$uid,
-				
-				'email'=>$request->getVar('email'),
-				'password'=>password_hash($request->getVar('password'),PASSWORD_DEFAULT),
-				'phone'=> $request->getVar('phone'),
-				'isAddmin'=>0,
-                'isUser'=>1,
-                              
-            ];
-            
+                    
+                    $dbIData=[
+                        'uid'=>$uid,
+                        'name'=>$request->getVar('name'),  
+                        'email'=>$request->getVar('email'),
+                        'password'=>password_hash($request->getVar('password'),PASSWORD_DEFAULT),
+                        'phone'=> $request->getVar('phone'),
+                        'zipCode'=>$request->getVar('zipcode'),
+                        'gender'=>$request->getVar('gender'),
+                    ];
+                    $dbIULog=[
+                        'uid'=>$uid,
+                        
+                        'email'=>$request->getVar('email'),
+                        'password'=>password_hash($request->getVar('password'),PASSWORD_DEFAULT),
+                        
+                        'isAdmin'=>(int)$request->getVar('isAdmin'),
+                        'isUser'=>(int)$request->getVar('isUser'),
+                                    
+                    ];
+                    
           
-            
-            if($db->save($dbIData)){
-                       if($dbulog->save($dbIULog)){
-                                echo "data inset at small table";
-                            }else{
+               //insert data
+                   if($db->save($dbIData)){
+                                    if($dbulog->save($dbIULog)){
+                                                echo "data inset at small table";
+                                            }else{
+                                                var_dump($db->erros());
+                                                die();
+                                            } 
+                            
+                            
+                                        echo "data insert";
+                                        $session=session();
+                                        $session->setFlashdata('sucess','Registration Sucessful');
+                                                    
+                                    
+                                        return redirect()->to(base_url('covid'));
+                                        die(); 
+                            } 
+                            else{
                                 var_dump($db->erros());
                                 die();
-                            } 
-              
-              
-                        echo "data insert";
-                        $session=session();
-                        $session->setFlashdata('sucess','Registration Sucessful');
-                                    
-                    
-                        return redirect()->to(base_url('covid'));
-                        die(); 
-            } 
-            else{
-				var_dump($db->erros());
-				die();
-			}   
+                            }   
                 
 
 
@@ -130,9 +130,14 @@ public function log(){
 
                 $email=$request->getVar('email');
                 $password=$request->getVar('password');
+
+
+                // $isAdmin=(int)$request->getVar('isAdmin');
+                // $isUser=(int)$request->getVar('isUser');
+
                
                
-                $user =$dbGLog->where('email',$email)->first();  // getig user data from user log Table
+                $user =$dbGLog->where('email',$email)->first();  // gettig user data from user log Table
                
                if(password_verify($password,$user['password'])){
                     if(count($user) >0){
@@ -145,8 +150,14 @@ public function log(){
                            $UData=$dbGUD->where('uid',$user['uid'])->first();     // geting all info from user data table accordi
 
                                                 if(count($UData) >0){                /// to check if data is also in Main user data table   
-                                        
-                                                        $this->setUserSession($UData);
+
+                                                           $UData['isAdmin']=$user['isAdmin'];
+                                                           $UData['isUser']=$user['isUser'];
+
+                                                            
+                                                         //    print_r($UData);
+                                                        
+                                                         $this->setUserSession($UData);
                                                 
                                                         return redirect()->to( base_url('/'));
                                                     }else{
@@ -182,8 +193,8 @@ public function log(){
         'phone'=>$user['phone'],
         'zipCode'=>$user['zipCode'],
         'gender'=>$user['gender'],
-        // 'isAddmin'=>$user['isAddmin'],      // use when new  coloum  will be introduced in user table
-        // 'isUser'=>$user['isUser'],
+         'isAdmin'=>$user['isAdmin'],      // use when new  coloum  will be introduced in user table
+         'isUser'=>$user['isUser'],
          
         'isLoggedIn'=>true,
      ];

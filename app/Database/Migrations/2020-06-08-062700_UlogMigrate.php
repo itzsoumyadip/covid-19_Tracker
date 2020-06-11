@@ -22,7 +22,7 @@ class UlogMigrate extends Migration
 					'type' =>'VARCHAR',
 					'constraint'=>'255',
 				 ],
-				 'isAddmin'=>[
+				 'isAdmin'=>[
 					'type' =>'TINYINT',
 					
 				 ],

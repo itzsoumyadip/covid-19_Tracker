@@ -26,7 +26,7 @@ class UserMigrat extends Migration
 
 				],
 				'email'=>[
-					'type' =>'VARCHAR',
+					'type' =>'VARCHAR', 
 					'constraint'=>'20',
 				],
 				 'password'=>[
@@ -45,6 +45,19 @@ class UserMigrat extends Migration
 					'type' =>'VARCHAR',
 					'constraint'=>'10',
 				 ],
+
+
+				 'Address'=>[
+					'type' =>'VARCHAR',
+					'constraint'=>'100',
+					'null'=>TRUE,
+				 ],
+				 
+
+
+
+
+		
 				 'created_at'=>[
 					 'type' =>'TIMESTAMP',
 				 ],
@@ -52,6 +65,7 @@ class UserMigrat extends Migration
 				 'updated_at'=>[
 					'type' =>'TIMESTAMP',
 				],
+				
 				 
 
 

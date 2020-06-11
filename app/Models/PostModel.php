@@ -2,13 +2,13 @@
 
 use CodeIgniter\Model;
 
-class ULogModel extends Model{
+class PostModel extends Model{
 
-    public $table = 'ulogins';
+    public $table = 'posts';
  
     public $returnType = 'array';
     public $useSoftDeletes=false;
-    public $allowedFields=['uid','email','password','isAdmin','isUser'];
+    public $allowedFields=['uid','suspect_name','suspect_addres','suspect_email','suspect_city','suspect_zipCode','suspect_country','gender','suspect_doc','suspect_url'];
   
     public $useTimestamps=true;
     
@@ -17,8 +17,4 @@ class ULogModel extends Model{
 
 
 
-
-
-
-
-}
+}  

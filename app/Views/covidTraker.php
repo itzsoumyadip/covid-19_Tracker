@@ -83,7 +83,7 @@
 
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href=""><?= session()->get('name') ?> </a>
+            <a class="nav-link" href=""><?= session()->get('isAdmin') ?> </a>
           </li>
                    
           <li class="nav-item">
