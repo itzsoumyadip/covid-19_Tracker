@@ -158,8 +158,13 @@ public function log(){
                                                          //    print_r($UData);
                                                         
                                                          $this->setUserSession($UData);
+
+                                                        if($UData['isAdmin']==1){
+                                                            return redirect()->to( base_url('admin'));
+                                                        }else{
                                                 
-                                                        return redirect()->to( base_url('/'));
+                                                             return redirect()->to( base_url('/'));
+                                                        }
                                                     }else{
                                                         echo "no data in our main server";
                                                         }

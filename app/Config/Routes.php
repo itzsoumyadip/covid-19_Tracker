@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/','CovidController::dashboard');
 $routes->get('/covid', 'UserController::sign');
+$routes->get('/admin', 'AdminController::index');
 //$routes->get('/test', 'UserController::test');
 $routes->post('/register', 'UserController::register');
 $routes->post('/log', 'UserController::log');

@@ -16,7 +16,7 @@ class UlogMigrate extends Migration
 				],
 					'email'=>[
 					'type' =>'VARCHAR',
-					'constraint'=>'20',
+					'constraint'=>'50',
 				],
 				 'password'=>[
 					'type' =>'VARCHAR',
