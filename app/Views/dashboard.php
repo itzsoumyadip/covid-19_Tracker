@@ -34,9 +34,9 @@
                         <h2 class="form-title">INFROM US</h2>
                     
                     
-                        <form  action="<?php echo site_url('PostController/upload') ?>" method="POST" class="register-form" id="register-form" enctype="multipart/form-data" >   
+                        <form  action="<?php  echo site_url('upload') ?> " method="POST" class="register-form" id="register-form" enctype="multipart/form-data" >   
                                                                                                                         <!-- onsubmit="return validate()" -->
-                           
+                                                                                                                        <?php // echo site_url('PostController/upload') ?>  
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name mdc-text-light-blue"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>

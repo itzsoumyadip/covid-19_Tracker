@@ -37,7 +37,7 @@ $routes->get('/inform', 'PostController::index');
 //$routes->get('/test', 'UserController::test');
 $routes->post('/register', 'UserController::register');
 $routes->post('/log', 'UserController::log');
-
+$routes->post('/upload','PostController::upload');
 
 
 /**
