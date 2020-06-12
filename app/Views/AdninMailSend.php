@@ -25,7 +25,7 @@
   echo "<br>";
   }
 
-
+                              
 
 
 
@@ -34,3 +34,5 @@
         // echo "<pre>";
         //  print_r($pin)
 ?>
+          <button type="button" class="btn btn-danger btn-lg donload-button">
+          <a href="<?= base_url('logout')?>">Logout</a></button>
