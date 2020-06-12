@@ -15,13 +15,8 @@ class AdminController extends BaseController
   public function index(){
                   
     
-    if(session()->get('isLoggedIn')!=0 && session()->get('isAdmin')!=1 ){
-      return redirect()->to( base_url('covid'));
-  }else{    
-
-    
-    
-    
+    if(session()->get('isLoggedIn')==1 and session()->get('isAdmin')==1 ){
+                          
                   $data=[];
                   $spin=[];
                   $cpin=[];
@@ -108,7 +103,13 @@ class AdminController extends BaseController
 
 
  
-    }// index ends
+     
+         else{   
+                    return redirect()->to( base_url('covid'));   
+         
+  }
+  }// index ends  
+
 
       private function msendr($rmpin,$clientData){
        // print_r($rmpin);
