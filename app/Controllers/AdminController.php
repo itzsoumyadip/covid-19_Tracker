@@ -53,18 +53,24 @@ class AdminController extends BaseController
             if($match==$cpin[$j]){        // 
                   $mhF[]="match found on zipCode:-". $cpin[$j];   
 
-                        $maildata=$clientData->where('zipCode',$match)->findAll();
+                        $maildata=$clientData->where('zipCode',$cpin[$j])->findAll();
 
-                         for($i=0;$i<count($maildata);$i++){
+                         for($k=0;$k<count($maildata);$k++){
+                             
+                              // //  test code 
                               // echo "<pre>";
-                              //   print_r($maildata[$i]['email']);
-                              //   print_r($maildata[$i]['name']);
+                              //   print_r($maildata[$k]['email']." i= " . $k);
+                              //   print_r($maildata[$k]['name']." i= " . $k ); }
+                              
+                              //   echo count($maildata)."<br>";
+                              //    print_r($maildata);
+                               
 
 
 
-                              $to_email = $maildata[$i]['email'];
+                              $to_email = $maildata[$k]['email'];
                               $subject = "CORONA FOUND ON YOUR AREA ";
-                              $body = "HI ". $maildata[$i]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $cpin[$j];
+                              $body = "HI ". $maildata[$k]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $cpin[$j];
                               $headers = "From:coronamajorproject@gmail.com";  
 
                               if (mail($to_email, $subject, $body, $headers)) {
@@ -76,7 +82,7 @@ class AdminController extends BaseController
                        
                        
                        
-                          }// takaing out  email data for the match pin from user data loop   
+                          }//mail for end takaing out  email data for the match pin from user data loop   
                  
                  
                  
