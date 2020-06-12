@@ -39,13 +39,13 @@
                                                                                                                         <?php // echo site_url('PostController/upload') ?>  
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name mdc-text-light-blue"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"  value="<?= session()->get('name') ?>" />
+                                <input type="text" name="name" id="name" placeholder="Your Name"  value="<?= session()->get('name') ?>" disabled/>
                             </div>
 
                             
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email animated  bounce  zmdi-hc-lg mdc-text-light-blue"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" value="<?= session()->get('email') ?>" disabled />
                             </div>
 
                             
