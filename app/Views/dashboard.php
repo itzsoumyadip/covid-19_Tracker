@@ -39,7 +39,7 @@
                                                                                                                         <?php // echo site_url('PostController/upload') ?>  
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name mdc-text-light-blue"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="Your Name"  value="<?= session()->get('name') ?>" />
                             </div>
 
                             
@@ -128,7 +128,8 @@
                         </form>
                     </div>
                   
-                  
+                    <button type="button" class="btn btn-danger btn-lg donload-button">
+          <a href="<?= base_url('logout')?>">Logout</a></button>
                   
                   
                   
