@@ -15,7 +15,7 @@ class AdminController extends BaseController
   public function index(){
                   
     
-    if(session()->get('isLoggedIn')==1 && session()->get('isAdmin')!=1 ){
+    if(session()->get('isLoggedIn')!=0 && session()->get('isAdmin')!=1 ){
       return redirect()->to( base_url('covid'));
   }else{    
 
