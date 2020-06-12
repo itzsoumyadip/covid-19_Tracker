@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\PostModel;
-use App\Models\UserModel;
+use App\Models\UserModel; 
 
 class PostController extends BaseController
 {      

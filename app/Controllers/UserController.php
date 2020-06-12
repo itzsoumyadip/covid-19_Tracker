@@ -1,4 +1,4 @@
-<?php namespace App\Controllers;
+<?php namespace App\Controllers; 
 
 use App\Models\UserModel;
 use App\Models\ULogModel;
@@ -163,7 +163,7 @@ public function log(){
                                                             return redirect()->to( base_url('admin'));
                                                         }else{
                                                 
-                                                             return redirect()->to( base_url('/'));
+                                                             return redirect()->to( base_url('inform'));
                                                         }
                                                     }else{
                                                         echo "no data in our main server";
