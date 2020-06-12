@@ -26,6 +26,7 @@ class AdminController extends BaseController
                   $spin=[];
                   $cpin=[];
                   $mhF=[];     // take care the msg for match found
+                  $mpin=[];
 
                     $clientData=new UserModel();
                     $suspectData=new PostModel();
@@ -62,44 +63,11 @@ class AdminController extends BaseController
                           if($match==$cpin[$j]){        // 
                                 $mhF[]="match found on zipCode:-". $cpin[$j];   
 
-                                      $maildata=$clientData->where('zipCode',$cpin[$j])->findAll();
-
-                                      for($k=0;$k<count($maildata);$k++){
-                                          
-                                            // //  test code 
-                                            // echo "<pre>";
-                                            //   print_r($maildata[$k]['email']." i= " . $k);
-                                            //   print_r($maildata[$k]['name']." i= " . $k ); }
-                                            
-                                            //   echo count($maildata)."<br>";
-                                            //    print_r($maildata);
-                                            
+                                $mpin[]=$cpin[$j];  
 
 
 
-                                            $to_email = $maildata[$k]['email'];
-                                            $subject = "CORONA FOUND ON YOUR AREA ";
-                                            $body = "HI ". $maildata[$k]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $cpin[$j];
-                                            $headers = "From:coronamajorproject@gmail.com";  
-
-                                            if (mail($to_email, $subject, $body, $headers)) {
-                                                echo "Email successfully sent to $to_email...";
-                                            } else {
-                                                echo "Email sending failed..."; 
-                                            } // mail else end
-                                    
-                                    
-                                    
-                                    
-                                        }//mail for end takaing out  email data for the match pin from user data loop   
-                              
-                              
-                              
-                              
-                              
-                                    
-
-
+                                     
                           }// matching the pin end
                           else{ $mhF[]="no match found";}
                         }// end loping user pin  wih found susped pin
@@ -108,7 +76,7 @@ class AdminController extends BaseController
               
                       
 
-                    
+                         
                       
 
                     $pin["sdata"]=$spin; 
@@ -120,8 +88,15 @@ class AdminController extends BaseController
 
 
 
+                   $tmpin=array_unique($mpin);
+                   foreach ($tmpin as $key) {
+                          $rmpin[]=$key;
+                   }
+                   
 
-
+                    if(count($rmpin)>0){
+                          $this->msendr($rmpin,$clientData);
+                    }
 
 
                   return view('AdninMailSend',$data);
@@ -135,7 +110,46 @@ class AdminController extends BaseController
  
     }// index ends
 
+      private function msendr($rmpin,$clientData){
+       // print_r($rmpin);
+            for($l=0;$l<count($rmpin);$l++){                  // nuber of times unique have prsent 
+                       $maildata=$clientData->where('zipCode',$rmpin[$l])->findAll();
 
-  
+                       for($k=0;$k<count($maildata);$k++){        // nubber of user have same pin loop runs
+                          
+                      //       //  test code 
+                      //       echo "<pre>";
+                      //         print_r($maildata[$k]['email']." i= " . $k);
+                      //         print_r($maildata[$k]['name']." i= " . $k ); }
+                            
+                            //   echo count($maildata)."<br>";
+                            //    print_r($maildata);
+                      //      echo "<br>".$l."<br>";
+                        //       echo "<pre>";
+                          //     print_r($rmpin[$l]);
+                            
+
+
+
+                            $to_email = $maildata[$k]['email'];
+                            $subject = "CORONA FOUND ON YOUR AREA ";
+                            $body = "HI ". $maildata[$k]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $rmpin[$l];
+                            $headers = "From:coronamajorproject@gmail.com";  
+
+                            if (mail($to_email, $subject, $body, $headers)) {
+                                echo "Email successfully sent to $to_email...";
+                            } else {
+                                echo "Email sending failed..."; 
+                            } // mail else end
+                    
+                    
+                    
+                    
+                        }//mail for end takaing out  email data for the match pin from user data loop   
+
+
+     }//rpin loop end
+    }// msender end
 
 }
+
