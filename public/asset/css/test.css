@@ -21,7 +21,8 @@ h1{
  /* title  and 
   navbar */
 #title{
-    background-color:#ff4c68;
+  
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     color: whitesmoke;
 }
 .tile{
@@ -58,7 +59,7 @@ h1{
 }
 
 .T:hover{
- box-shadow:-10px 15px  20px rgb(54, 51, 51);
+ box-shadow:-10px 15px  20px   rgba(5,0,125,1);
 }
 .card-header{
     border-radius:15% ;
@@ -102,13 +103,57 @@ h1{
 
 
 
-
+ 
 
 /* currentTime */
 .rt{
     margin:30px;
 
 }
+
+
+
+/*   Testimonials */
+#testimonials{
+    
+    text-align: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(63deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 26%, rgba(8,21,128,1) 36%, rgba(8,22,129,1) 46%, rgba(8,28,133,1) 63%, rgba(7,53,150,1) 80%, rgba(4,133,203,1) 93%, rgba(0,212,255,1) 100%);
+    color: whitesmoke;
+}
+.testimonial-image{
+    border-radius:50%;
+    width: 20%;
+    height:20%;
+    margin:1rem ;
+
+}
+
+.testimonial-text{
+    font-weight: bolder;
+    line-height:1.3;
+    font-size:2.5rem;
+    letter-spacing:2px;
+
+}
+pre{ 
+    font-weight: bolder;
+    line-height:1.3;
+    font-size:2.5rem;
+    letter-spacing:2px;
+
+
+}
+.cari{
+    padding:7% 15%;
+}
+.indi li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    bottom: -40px;
+}
+
 
 
 

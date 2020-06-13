@@ -209,9 +209,61 @@
 
 
 
-
-
   </section>
+
+
+ <!-- Testimonials -->
+
+ <section id="testimonials">
+
+
+<div id="testimonials-Controls" class="carousel slide" data-ride="false">
+  <ol class="carousel-indicators indi">
+    <li data-target="#testimonials-Controls" data-slide-to="0" class="active"></li>
+    <li data-target="#testimonials-Controls" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner cari">
+    <div class="carousel-item active">
+
+      <h2 class="testimonial-text">As the #COVID19 pandemic accelerates, we are concerned about its impact on women, children & adolescents' access to healthcare. 
+</h2>
+      <img class="testimonial-image" src="<?php echo base_url('public/asset/images/c1.JPG') ?>" alt="DR">
+      <em>Tedros Adhanom Ghebreyesus</em><i class="fa fa-twitter mx-3" aria-hidden="true"></i>
+    </div>
+
+    <div class="carousel-item">
+      <h2 class="testimonial-text">In India Coronavirus Cases
+        1st February- 1
+        1st March - 3
+        1st April - 2,059
+        1st May- 37,262
+        1st June- 1,97,264 (still adding)</h2>
+      <img class="testimonial-image" src="<?php echo base_url('public/asset/images/c2.JPG') ?>" alt="lady-profile">
+      <em>Soumyadip Saha, Kolkata</em>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#testimonials-Controls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#testimonials-Controls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
   </section>
 
 
