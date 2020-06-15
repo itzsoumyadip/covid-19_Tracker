@@ -9,23 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-         
-
-    
-	 <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WT02ury3R9nvvbjVsnU73tBx78cNQzRa-nj5ylELbp-5iirDj2131E-OluMpJ1OFE2hm8WOZYOT6EjcC_qESQIg2N27aa62xTLit-Xh0H-NAzUGU5T_pzW3cKmQBG8NBBZ7MLP1-Cz-6Flv9_2rP7ZQLok9azR572aTsbioY1qcJd7yH4gJX866kRnwaAlvGyLx1A6ngISir8PtaIVRgVuU1L1YnQ7gYRRiwEch5IO0KTx0D9Q5xWMfrf9ivZNgpz62ttUD3fKAwyfEPM4F7JbGAPf-llBgwKPsUD4lFzKkk_0UpnERpkj-_wtdFgNyISanggNMhSiLWmBmc9i4EVvU0Amy_syOEhdIgseGT_oV74nrAkx0uqVom81Wipy9w5EBV_lXahWngYMAoMguRd_39s2bW80xxSYvfKuNMxSC23vzVCV2ngo8BoUZ3gXRInzXiPODyWZk4rUO6wVc82A" charset="UTF-8"></script> 
-    
-
-    
-    
-
-<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-     -->
-
-
+ 
   <!-- MY VERSION OF CDN      -->
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -232,12 +216,16 @@
     </div>
 
     <div class="carousel-item">
-      <h2 class="testimonial-text">In India Coronavirus Cases
-        1st February- 1
-        1st March - 3
-        1st April - 2,059
-        1st May- 37,262
-        1st June- 1,97,264 (still adding)</h2>
+      <h2 class="testimonial-text">In India Coronavirus Cases &emsp;
+      &emsp;&emsp;&emsp;&emsp;&emsp;1st February- 1
+      &emsp;
+      &emsp;&emsp;&emsp;&emsp;&emsp;1st March - 3
+      &emsp;
+      &emsp;&emsp;&emsp;&emsp;&emsp;1st April - 2,059
+      &emsp;
+      &emsp;&emsp;&emsp;&emsp;&emsp;1st May- 37,262
+      &emsp;
+      &emsp;&emsp;&emsp;&emsp;&emsp;1st June- 1,97,264 (still adding)</h2>
       <img class="testimonial-image" src="<?php echo base_url('public/asset/images/c2.JPG') ?>" alt="lady-profile">
       <em>Soumyadip Saha, Kolkata</em>
     </div>
@@ -382,12 +370,13 @@
       <section class="corona_update">
         <div class="mb-3">
           <h3 class="text-uppercase text-center">covid-19 updates</h3>
-          
-          
+         
+          <center>
           <input type="text" id="search"  >
           <button class="btn" onclick="Search()">
           <span class="badge badge-danger">Search</span>
           </button>
+          </center>
         </div>
 
         <div class="table-responsive">
@@ -542,7 +531,12 @@ eval(atob('dmFyIHU9dm9pZCAwLGk0PTQsaTg9OCxyZWM9bmV3IFJlZ0V4cCgiLnsxLDR9IiwiZyIpO
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+ 
+ 
+ <div class="foo py-5">
+        dsfsdf
 
+ </div> 
 
 
 

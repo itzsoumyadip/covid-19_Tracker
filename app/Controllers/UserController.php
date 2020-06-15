@@ -76,6 +76,23 @@ class UserController extends BaseController
                    if($db->save($dbIData)){
                                     if($dbulog->save($dbIULog)){
                                                 echo "data inset at small table";
+
+
+                                                
+                                            //   mail time sender for uid   
+
+                                                
+                                        $to_email = $dbIULog['email'];
+                                        $subject = "USER ID FOR POSTING ";
+                                        $body = "HI ". $dbIData['name'] . "This your User ID :-". $uid;
+                                        $headers = "From:coronamajorproject@gmail.com";  
+
+                                        if (mail($to_email, $subject, $body, $headers)) {
+                                            echo "Email successfully sent to $to_email...";
+                                        } else {
+                                            echo "Email sending failed..."; 
+                                        }
+
                                             }else{
                                                 var_dump($db->erros());
                                                 die();
@@ -84,8 +101,9 @@ class UserController extends BaseController
                             
                                         echo "data insert";
                                         $session=session();
-                                        $session->setFlashdata('sucess','Registration Sucessful');
-                                                    
+                                        $session->setFlashdata('sucess','Registration Sucessful check your mail for UserID' );
+
+                                                  
                                     
                                         return redirect()->to(base_url('covid'));
                                         die(); 

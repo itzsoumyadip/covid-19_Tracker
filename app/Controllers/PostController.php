@@ -47,7 +47,7 @@ class PostController extends BaseController
                 // if both uid match
                         $UData=$db->where('uid',$request->getVar('uid'))->first();
                     
-                        if(count($UData) >0){
+                        if(count($UData)>0){
                             $dbIData= [
                                 'Address'=>$request->getVar('address'),  
                             ];

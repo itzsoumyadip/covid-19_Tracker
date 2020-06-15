@@ -9,13 +9,13 @@
     <!-- Font Icon -->
     <!-- <link rel="stylesheet" href="material-design-iconic-font.css">  -->
     
-    <!-- Main css -->
-    <link rel="stylesheet" href="material-design-color-palette.min.css">
+    <!-- Main css -->       
+    <link rel="stylesheet" href="<?php echo base_url('public/asset/bootstrap/material-design-color-palette.min.css') ?>"> 
     <link rel="stylesheet" href="animate.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="<?php echo base_url('public/asset/bootstrap/styless.css') ?>">
    <style>
      .sign-in{
         visibility:hidden;              
@@ -55,7 +55,7 @@
                             </div>
 
 
-                            suspected details
+                           <h6> suspected details</h6>
                               
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name mdc-text-light-blue"></i></label>
@@ -128,8 +128,7 @@
                         </form>
                     </div>
                   
-                    <button type="button" class="btn btn-danger btn-lg donload-button">
-          <a href="<?= base_url('logout')?>">Logout</a></button>
+                    
                   
                   
                   
@@ -139,6 +138,8 @@
         </section>
 
     </div>
+    <button type="button" class="btn btn-danger btn-lg donload-button">
+          <a href="<?= base_url('logout')?>">Logout</a></button>
 
     <!-- JS -->
     <script src="bootstrap/js/main.js"></script>
