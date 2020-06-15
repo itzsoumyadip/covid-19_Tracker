@@ -23,4 +23,9 @@ public function symptom()
 }
 
 
+public function india(){
+	return view('india');
+}
+
+
 }

@@ -23,7 +23,26 @@ class PostController extends BaseController
                 return redirect()->to( base_url('covid'));
            }else{    
                     $request=\Config\Services::request();
+                    helper(['form']);
+                   $data=[];
+                
+                    $rules=[
+                      
+                        
+                        'address'=>'required|min_length[2]|max_length[250]',
+                        'sname'=>'min_length[3]|max_length[99]' ,
+                        'semail'=>'min_length[6]|max_length[50]|valid_email',
+                        'saddress'=>'min_length[0]|max_length[250]',
+                        'scity'=>'min_length[2]|max_length[250]',
+                        'szipcode'=>'required',
+                        'uid'=>'required',
+                    ];
 
+                    if( ! $this->validate($rules)){
+                        $data=[
+                            'validation'=>$this->validator,
+                        ];
+                    }else{
 
 
 
@@ -44,7 +63,7 @@ class PostController extends BaseController
 
                 
 
-                // if both uid match
+                // if both uid match  address insert
                         $UData=$db->where('uid',$request->getVar('uid'))->first();
                     
                         if(count($UData)>0){
@@ -52,6 +71,8 @@ class PostController extends BaseController
                                 'Address'=>$request->getVar('address'),  
                             ];
                         
+                            session()->set($dbIData);
+
                                 if($db->update($UData['id'],$dbIData)){
                                             echo "update";
                                             
@@ -78,7 +99,9 @@ class PostController extends BaseController
                         
                     
                         if($dbPost->save($dbIPost)){
-                            echo "data inset at small table";
+                                 echo "data insertd  successfully ";
+                            return redirect()->to( base_url('inform'));
+
                         
                                 }else{
                                 var_dump($db->erros());
@@ -100,6 +123,8 @@ class PostController extends BaseController
                         else{
                             echo "error";
                         }
+                    }
+                    return view('dashboard',$data);
                 }//sesion else end
  
 } // upload end

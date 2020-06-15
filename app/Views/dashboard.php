@@ -24,6 +24,15 @@
 </head>
 <body>
 
+<?php if (isset($validation)): ?> 
+		<div class="col-12">
+			<div class="alert alert-danger" role="alert">
+				<?= $validation->listErrors(); ?>
+			</div>
+        </div>
+        
+        <?php endif; ?>
+
     <div class="main">
 
     
@@ -51,11 +60,11 @@
                             
                             <div class="form-group">
                                 <label for="address">&nbsp<i class="zmdi  zmdi-pin animated infinite wobble zmdi-hc-lg mdc-text-light-blue" ></i></label>
-                                <input type="text" name="address" id="address" placeholder="Your Address"/>
+                                <input type="text" name="address" id="address" placeholder="Your Address" value="<?= session()->get('Address') ?>"/>
                             </div>
 
 
-                           <h6> suspected details</h6>
+                           <h6> suspected details</h6> 
                               
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name mdc-text-light-blue"></i></label>

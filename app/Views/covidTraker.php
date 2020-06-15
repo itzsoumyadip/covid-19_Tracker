@@ -67,11 +67,11 @@
 
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href=""><?= session()->get('isAdmin') ?> </a>
+            <a class="nav-link" href=""><?= session()->get('name') ?> </a>
           </li>
                    
           <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
+          <a class="nav-link" href="<?php echo base_url('CovidController/india')?>">State Wise</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">About</a>
@@ -121,9 +121,9 @@
         <div class="col-lg-6">
 
           <h1>Tracking  Coronavirus</h1>
-          <button type="button" class="btn btn-dark btn-lg  donload-button"><i class="fab fa-apple"></i>
+          <button type="button" class="btn btn-dark btn-lg  donload-button"><i class="fa fa-sign-in"></i>
             <a href="<?php echo base_url('UserController/log')?>">login</a></button>
-          <button type="button" class="btn btn-outline-light btn-lg donload-button"><i class="fab fa-google-play"></i>
+          <button type="button" class="btn btn-outline-light btn-lg donload-button"><i class="fa fa-sign-out"></i>
           <a href="<?php echo base_url('UserController/logout')?>">Logout</a></button>
         </div>
 

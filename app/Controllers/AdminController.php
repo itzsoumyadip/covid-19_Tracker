@@ -127,20 +127,26 @@ class AdminController extends BaseController
                             //    print_r($maildata);
                       //      echo "<br>".$l."<br>";
                         //       echo "<pre>";
-                          //     print_r($rmpin[$l]);
+                          //     print_r($rmpin[$l]); 
                             
+                     
 
 
 
+                                     
                             $to_email = $maildata[$k]['email'];
                             $subject = "CORONA FOUND ON YOUR AREA ";
                             $body = "HI ". $maildata[$k]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $rmpin[$l];
                             $headers = "From:coronamajorproject@gmail.com";  
 
                             if (mail($to_email, $subject, $body, $headers)) {
-                                echo "Email successfully sent to $to_email...";
+                                 $msg="Email successfully sent to <strong class=\"alert-link\" > $to_email... </strong>";
+                                 session()->setFlashdata('sucess',$msg);
+                                 echo "Email successfully sent to <strong > $to_email... </strong>";
                             } else {
-                                echo "Email sending failed..."; 
+                               $msg= "Email sending failed...";
+                               session()->setFlashdata('fail',$msg);
+
                             } // mail else end
                     
                     

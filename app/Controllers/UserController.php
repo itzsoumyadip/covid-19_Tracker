@@ -17,7 +17,7 @@ class UserController extends BaseController
         $data=[];
         helper(['form']);
 
-        if($this->request->getMethod()=='post'){
+        if($this->request->getMethod()=='post'){ 
             
             
             //for user data table
@@ -216,8 +216,11 @@ public function log(){
         'phone'=>$user['phone'],
         'zipCode'=>$user['zipCode'],
         'gender'=>$user['gender'],
+        'Address'=>$user['Address'],
          'isAdmin'=>$user['isAdmin'],      // use when new  coloum  will be introduced in user table
          'isUser'=>$user['isUser'],
+         'Address'=>$user['Address'],
+        
          
         'isLoggedIn'=>true,
      ];
