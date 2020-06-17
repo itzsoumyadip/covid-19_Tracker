@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 
-class CovidController extends BaseController
+class CovidController extends BaseController 
 {
 
 
@@ -26,6 +26,12 @@ public function symptom()
 public function india(){
 	return view('india');
 }
+
+public function country($country){
+	echo $country;
+
+}
+
 
 
 }

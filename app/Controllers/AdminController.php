@@ -135,8 +135,8 @@ class AdminController extends BaseController
 
                                      
                             $to_email = $maildata[$k]['email'];
-                            $subject = "CORONA FOUND ON YOUR AREA ";
-                            $body = "HI ". $maildata[$k]['name'] . " hope you are good but be aware because corona have been Found on your area code:-". $rmpin[$l];
+                            $subject = "Alert Covid-19 ";
+                            $body = "HI ". $maildata[$k]['name'] . " hope you are safe and at home, a new  novle coronavirus case have been Found and updated  from your locality, your area code:-". $rmpin[$l];
                             $headers = "From:coronamajorproject@gmail.com";  
 
                             if (mail($to_email, $subject, $body, $headers)) {

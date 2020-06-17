@@ -250,3 +250,18 @@ pre{
 
 
 
+a:link{
+    color:white;
+    text-decoration: none;
+    
+  }
+  a:visited {
+color: yellow;
+text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: hotpink;
+text-decoration: none;
+}

@@ -83,8 +83,8 @@ class UserController extends BaseController
 
                                                 
                                         $to_email = $dbIULog['email'];
-                                        $subject = "USER ID FOR POSTING ";
-                                        $body = "HI ". $dbIData['name'] . "This your User ID :-". $uid;
+                                        $subject = "Covid-19:loclData:USER ID  ";
+                                        $body = "HI ". $dbIData['name'] . "This your User ID :-". $uid. " Thank you for register,#StaySafeStayHome" ;
                                         $headers = "From:coronamajorproject@gmail.com";  
 
                                         if (mail($to_email, $subject, $body, $headers)) {

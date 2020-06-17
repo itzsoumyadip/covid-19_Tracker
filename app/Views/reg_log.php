@@ -111,7 +111,7 @@
 	  	
 	 	
       <button type="submit" class="submit">Sign Up</button>
-	  <input class="btn btn-danger" type="submit" value="go" >
+	 <!-- <input class="btn btn-danger" type="submit" value="go" > -->
       <button type="button" class="fb-btn">Join with <span>facebook</span></button>
     </div>
   </div>
